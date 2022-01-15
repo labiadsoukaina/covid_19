@@ -2,3 +2,49 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
+
+#data preprocess /01_raw --> /02_intermediate
+data_input:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/country_vaccinations.csv
+
+data_describe:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/data_describe.csv
+
+data_first_rows:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/data_first_rows.csv
+
+missingValues_pourcentage:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/pourcentage.csv
+
+#data cleansing /02_intermediate
+missingValues_deleted:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/missingValues_deleted.csv
+  load_args:
+    encoding: cp1252
+
+missingValues_pourcentage_after_deletingMissingVal:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/missingValues_pourcentage_after_deletingMissingVal.csv
+
+naValues_deleted:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/naValues_deleted.csv
+
+us_data:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/us_data.csv
+
+# data renameColumn
+data_renamed_column:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/data_renamed_column.csv
+
+# data resize
+resized_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/final_data.csv

@@ -11,12 +11,13 @@ from .nodes.data_renameColumn import rename_column
 
 from .nodes.data_resize import limit_data_size
 
-#from .nodes.data_cleansing import US_data
-#from .nodes.data_cleansing import US_data
-#from .nodes.data_cleansing import US_data
-#from .nodes.data_cleansing import US_data
-#from .nodes.data_cleansing import US_data
-#from .nodes.data_cleansing import US_data
+from .nodes.data_subsets import US_data
+from .nodes.data_subsets import Mexico_data
+from .nodes.data_subsets import Canada_data
+from .nodes.data_subsets import UK_data
+from .nodes.data_subsets import China_data
+from .nodes.data_subsets import India_data
+from .nodes.data_subsets import world_countries
 
 def create_pipeline(**kwargs):
     return Pipeline(
@@ -72,6 +73,76 @@ def create_pipeline(**kwargs):
                 inputs=["data_renamed_column", "params:limit_size"],
                 outputs="resized_data",
                 name="resized_data_node",
+            ),
+            # data subsets
+            node(
+                func=US_data,
+                inputs=["resized_data"],
+                outputs="US_data",
+                name="US_data_node",
+            ),
+            node(
+                func=Mexico_data,
+                inputs=["resized_data"],
+                outputs="Mexico_data",
+                name="Mexico_data_node",
+            ),
+            node(
+                func=Canada_data,
+                inputs=["resized_data"],
+                outputs="Canada_data",
+                name="Canada_data_node",
+            ),
+            node(
+                func=UK_data,
+                inputs=["resized_data"],
+                outputs="UK_data",
+                name="UK_data_node",
+            ),
+            node(
+                func=China_data,
+                inputs=["resized_data"],
+                outputs="China_data",
+                name="China_data_node",
+            ),
+            node(
+                func=India_data,
+                inputs=["resized_data"],
+                outputs="India_data",
+                name="India_data_node",
+            ),
+            node(
+                func=world_countries,
+                inputs=["US_data", "Mexico_data", "Canada_data", "UK_data", "China_data", "India_data"],
+                outputs="world_countries_1",
+                name="world_countries_1_node",
+            ),
+            # créer China_data à partir du dataSet da base pour avoir toutes les infos
+            node(
+                func=delete_naValues,
+                inputs=["data_input"],
+                outputs="data_input_1",
+                name="data_input_1_node",
+            ),
+            node(
+                func=rename_column,
+                inputs=["data_input_1"],
+                outputs="data_input_2",
+                name="data_input_2_node",
+            ),
+            node(
+                func=China_data,
+                inputs=["data_input_2"],
+                outputs="China_data_1",
+                name="China_data_1_node",
+            ),
+
+            # Créer le world_countries file avec China_data_1
+            node(
+                func=world_countries,
+                inputs=["US_data", "Mexico_data", "Canada_data", "UK_data", "China_data_1", "India_data"],
+                outputs="world_countries_2",
+                name="world_countries_2_node",
             ),
         ]
     )

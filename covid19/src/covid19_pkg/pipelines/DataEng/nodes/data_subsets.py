@@ -36,3 +36,7 @@ def China_data(data: pd.DataFrame) -> pd.DataFrame:
 def world_countries(us_data: pd.DataFrame, mexico_data: pd.DataFrame, canada_data: pd.DataFrame, uk_data: pd.DataFrame, china_data: pd.DataFrame, india_data: pd.DataFrame) -> pd.DataFrame:
     world_countries = pd.concat([us_data, mexico_data, canada_data, uk_data, china_data, india_data], axis = 0)
     return world_countries
+
+def world_countries_for_data_science(data: pd.DataFrame) -> pd.DataFrame:
+    world_countries_ds = data[data['pays'] != 'China']
+    return world_countries_ds

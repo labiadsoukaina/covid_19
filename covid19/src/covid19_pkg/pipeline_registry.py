@@ -33,6 +33,8 @@ from kedro.pipeline import Pipeline
 
 from .pipelines.DataEng import pipelines as de
 from .pipelines.DataScience import pipelines as ds
+from .pipelines.DataAnalyses import pipelines as da
+
 
 
 def register_pipelines() -> Dict[str, Pipeline]:
@@ -41,11 +43,14 @@ def register_pipelines() -> Dict[str, Pipeline]:
     Returns:
         A mapping from a pipeline name to a ``Pipeline`` object.
     """
+
     data_engineering_pipeline = de.create_pipeline()
     data_science_pipeline = ds.create_pipeline()
+    data_analyses_pipeline = da.create_pipeline()
 
     return {
         "de": data_engineering_pipeline,
         "ds": data_science_pipeline,
-        "__default__": data_engineering_pipeline + data_science_pipeline
+        "da": data_analyses_pipeline,
+        "__default__": data_engineering_pipeline + data_analyses_pipeline + data_science_pipeline
         }

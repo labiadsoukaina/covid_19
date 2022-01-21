@@ -7,7 +7,7 @@
 #data preprocess /01_raw --> /02_intermediate
 data_input:
   type: pandas.CSVDataSet
-  filepath: data/03_primary/country_vaccinations.csv
+  filepath: data/01_raw/country_vaccinations.csv
 
 data_describe:
   type: pandas.CSVDataSet

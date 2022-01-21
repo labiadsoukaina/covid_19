@@ -18,6 +18,7 @@ from .nodes.data_subsets import UK_data
 from .nodes.data_subsets import China_data
 from .nodes.data_subsets import India_data
 from .nodes.data_subsets import world_countries
+from .nodes.data_subsets import world_countries_for_data_science
 
 def create_pipeline(**kwargs):
     return Pipeline(
@@ -143,6 +144,12 @@ def create_pipeline(**kwargs):
                 inputs=["US_data", "Mexico_data", "Canada_data", "UK_data", "China_data_1", "India_data"],
                 outputs="world_countries_2",
                 name="world_countries_2_node",
+            ),
+            node(
+                func=world_countries_for_data_science,
+                inputs=["world_countries_2"],
+                outputs="world_countries_ds",
+                name="world_countries_ds_node",
             ),
         ]
     )

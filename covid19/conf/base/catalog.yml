@@ -3,7 +3,7 @@
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
 
-
+#DataEng
 #data preprocess /01_raw --> /02_intermediate
 data_input:
   type: pandas.CSVDataSet
@@ -36,9 +36,9 @@ naValues_deleted:
   type: pandas.CSVDataSet
   filepath: data/02_intermediate/naValues_deleted.csv
 
-us_data:
-  type: pandas.CSVDataSet
-  filepath: data/02_intermediate/us_data.csv
+#us_data:
+ # type: pandas.CSVDataSet
+ # filepath: data/02_intermediate/us_data.csv
 
 # data renameColumn
 data_renamed_column:
@@ -50,39 +50,83 @@ resized_data:
   type: pandas.CSVDataSet
   filepath: data/03_primary/final_data.csv
 
-  # data subsets
-  US_data:
-    type: pandas.CSVDataSet
-    filepath: data/03_primary/US_data.csv
-  Mexico_data:
-    type: pandas.CSVDataSet
-    filepath: data/03_primary/Mexico_data.csv
-  Canada_data:
-    type: pandas.CSVDataSet
-    filepath: data/03_primary/Canada_data.csv
-  UK_data:
-    type: pandas.CSVDataSet
-    filepath: data/03_primary/UK_data.csv
-  China_data:
-    type: pandas.CSVDataSet
-    filepath: data/03_primary/China_data.csv
-  India_data:
-    type: pandas.CSVDataSet
-    filepath: data/03_primary/India_data.csv
-  China_data_1:
-    type: pandas.CSVDataSet
-    filepath: data/03_primary/China_data_1.csv
+# data subsets
+US_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/US_data.csv
+Mexico_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/Mexico_data.csv
+Canada_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/Canada_data.csv
+UK_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/UK_data.csv
+China_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/China_data.csv
+India_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/India_data.csv
+China_data_1:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/China_data_1.csv
 
-  data_input_1:
-    type: pandas.CSVDataSet
-    filepath: data/02_intermediate/data_input_1.csv
-  data_input_2:
-    type: pandas.CSVDataSet
-    filepath: data/02_intermediate/data_input_2.csv
+data_input_1:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/data_input_1.csv
+data_input_2:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/data_input_2.csv
 
-  world_countries_1:
-    type: pandas.CSVDataSet
-    filepath: data/05_model_input/world_countries_1.csv
-  world_countries_2:
-    type: pandas.CSVDataSet
-    filepath: data/05_model_input/world_countries_2.csv
+world_countries_1:
+  type: pandas.CSVDataSet
+  filepath: data/05_model_input/world_countries_1.csv
+world_countries_2:
+  type: pandas.CSVDataSet
+  filepath: data/05_model_input/world_countries_2.csv
+
+#DataAnalyses
+#countries_vaccinations_visualisation
+us_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/us_total_vaccination.jpeg
+
+mexico_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/mexico_total_vaccination.jpeg
+
+canada_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/canada_total_vaccination.jpeg
+
+uk_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/uk_total_vaccination.jpeg
+
+china_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/china_total_vaccination.jpeg
+
+china_total_vaccination_1_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/china_total_1_vaccination.jpeg
+
+india_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/india_total_vaccination.jpeg
+
+# scatterplot_matrix_visualisation
+scatterplot_matrix_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/world/scatterplot_matrix.jpeg
+
+# world_countries_vaccination_visualisation
+world_total_vaccination_1_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/world/world_total_vaccination_1.jpeg
+
+world_total_vaccination_2_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/world/world_total_vaccination_2.jpeg

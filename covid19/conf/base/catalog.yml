@@ -87,7 +87,8 @@ world_countries_2:
   type: pandas.CSVDataSet
   filepath: data/05_model_input/world_countries_2.csv
 
-
+#Data Science
+#Data preparation
 world_countries_ds:
   type: pandas.CSVDataSet
   filepath: data/05_model_input/world_countries_2.csv
@@ -96,6 +97,8 @@ world_countries_date_column_edited:
   type: pandas.CSVDataSet
   filepath: data/01_raw/world_countries_date_column_edited.csv
 
+#Data Science
+#Train and Test data
 X_train:
   type: pandas.CSVDataSet
   filepath: data/02_intermediate/X_train.csv
@@ -112,6 +115,8 @@ y_test:
   type: pandas.CSVDataSet
   filepath: data/02_intermediate/y_test.csv
 
+#Data Science
+#Models
 model_rf:
   type: pickle.PickleDataSet
   filepath: data/06_models/model_rf.pickle
@@ -123,6 +128,32 @@ model_lr:
 model_dt:
   type: pickle.PickleDataSet
   filepath: data/06_models/model_dt.pickle
+
+#Data Science
+#Plots & Reports
+random_forest_evaluation_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/evaluation/randomForest/random_forest_evaluation.jpeg
+
+random_forest_report_plot:
+  type: text.TextDataSet
+  filepath: data/08_reporting/evaluation/randomForest/random_forest_report.md
+
+logistic_regression_evaluation_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/evaluation/logisticRegression/logistic_regression_evaluation.jpeg
+
+logistic_regression_report_plot:
+  type: text.TextDataSet
+  filepath: data/08_reporting/evaluation/logisticRegression/logistic_regression_report.md
+
+decision_tree_evaluation_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/evaluation/decisionTree/decision_tree_evaluation.jpeg
+
+decision_tree_report_plot:
+  type: text.TextDataSet
+  filepath: data/08_reporting/evaluation/decisionTree/decision_tree_report.md
 
 #DataAnalyses
 #countries_vaccinations_visualisation

@@ -12,6 +12,6 @@ def show_data_first_rows(data: pd.DataFrame) -> pd.DataFrame:
     return df
 
 # Shows percentage of how many missing values are in each column
-def null_values_pourcentage(data: pd.DataFrame) -> pd.DataFrame:
+def null_values_pourcentage(data: pd.DataFrame):
     pourcentage = data.isnull().sum()/ data.shape[0]
     return pourcentage

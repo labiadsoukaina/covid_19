@@ -6,7 +6,6 @@ from .nodes.world_countries_vaccination_visualisation import world_total_vaccina
 def create_pipeline(**kwargs):
     return Pipeline(
         [
-            # data preprocess
             node(
                 func=country_total_vaccination,
                 inputs=["US_data"],

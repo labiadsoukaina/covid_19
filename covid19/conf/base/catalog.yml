@@ -87,6 +87,50 @@ world_countries_2:
   type: pandas.CSVDataSet
   filepath: data/05_model_input/world_countries_2.csv
 
+#DataAnalyses
+#countries_vaccinations_visualisation
+us_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/us_total_vaccination.jpeg
+
+mexico_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/mexico_total_vaccination.jpeg
+
+canada_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/canada_total_vaccination.jpeg
+
+uk_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/uk_total_vaccination.jpeg
+
+china_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/china_total_vaccination.jpeg
+
+china_total_vaccination_1_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/china_total_1_vaccination.jpeg
+
+india_total_vaccination_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/countries/india_total_vaccination.jpeg
+
+# scatterplot_matrix_visualisation
+scatterplot_matrix_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/world/scatterplot_matrix.jpeg
+
+# world_countries_vaccination_visualisation
+world_total_vaccination_1_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/world/world_total_vaccination_1.jpeg
+
+world_total_vaccination_2_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/world/world_total_vaccination_2.jpeg
+
 #Data Science
 #Data preparation
 world_countries_ds:
@@ -95,7 +139,7 @@ world_countries_ds:
 
 world_countries_date_column_edited:
   type: pandas.CSVDataSet
-  filepath: data/01_raw/world_countries_date_column_edited.csv
+  filepath: data/02_intermediate/world_countries_date_column_edited.csv
 
 #Data Science
 #Train and Test data
@@ -154,48 +198,4 @@ decision_tree_evaluation_plot:
 decision_tree_report_plot:
   type: text.TextDataSet
   filepath: data/08_reporting/evaluation/decisionTree/decision_tree_report.md
-
-#DataAnalyses
-#countries_vaccinations_visualisation
-us_total_vaccination_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/countries/us_total_vaccination.jpeg
-
-mexico_total_vaccination_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/countries/mexico_total_vaccination.jpeg
-
-canada_total_vaccination_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/countries/canada_total_vaccination.jpeg
-
-uk_total_vaccination_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/countries/uk_total_vaccination.jpeg
-
-china_total_vaccination_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/countries/china_total_vaccination.jpeg
-
-china_total_vaccination_1_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/countries/china_total_1_vaccination.jpeg
-
-india_total_vaccination_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/countries/india_total_vaccination.jpeg
-
-# scatterplot_matrix_visualisation
-scatterplot_matrix_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/world/scatterplot_matrix.jpeg
-
-# world_countries_vaccination_visualisation
-world_total_vaccination_1_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/world/world_total_vaccination_1.jpeg
-
-world_total_vaccination_2_plot:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/world/world_total_vaccination_2.jpeg
 

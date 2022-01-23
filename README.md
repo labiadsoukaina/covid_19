@@ -23,4 +23,4 @@ Loading in libraries/modules
    3.3 DecisionTreeclassifier
 
 # Vidéo
-La présentation du projet est sous format vidéo "présentation.mov" qu'il faut télécharger pour un bon fonctionnement.
+La présentation du projet est sous format vidéo "présentation du projet.mov" qu'il faut télécharger pour un bon fonctionnement.

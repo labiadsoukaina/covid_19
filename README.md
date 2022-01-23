@@ -1,4 +1,4 @@
-# covid_19
+# Progression de la vaccination contre Covid-19 dans le monde
 # kedro project
 
 # Réalisé par: 
@@ -8,13 +8,16 @@ Seif-El-Islam Khaled ZEMOUR
 # Plan
 Loading in libraries/modules
 1. Data Engineering
+
    1.1 Data Pre-Processing
    1.2 Data Cleaning
 
 2. Data Analyses
+
    2.1 Creating Visuals to represent data
 
 3. Data Sciences
+
    3.1 RandomForest Classification
    3.2 Logistic Regression
    3.3 DecisionTreeclassifier
